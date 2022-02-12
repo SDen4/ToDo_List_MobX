@@ -11,8 +11,10 @@ const Input = observer(() => {
   const addTodo = (event: any) => {
     event.preventDefault();
 
+    if (!todoText.length) return;
+
     const newToDoItem = {
-      id: String(store.todos.length + 1),
+      id: String(store.counter + 1),
       title: todoText,
       done: false,
     };
@@ -29,7 +31,7 @@ const Input = observer(() => {
         onChange={(event) => setTodoText(event.target.value)}
         value={todoText}
         className={classes.input}
-        placeholder="Press enter to add the todo"
+        placeholder="Press enter to add a new todo"
       />
     </form>
   );

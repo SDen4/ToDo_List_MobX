@@ -4,12 +4,14 @@ import { TodoType } from './types';
 
 class Store {
   todos = [
-    { id: '123', title: 'Make coffee', done: false },
-    { id: '124', title: 'Make soup', done: false },
-    { id: '125', title: 'Make dinner tomorrow', done: false },
-    { id: '126', title: 'Read book', done: true },
-    { id: '127', title: 'Study mobx', done: false },
+    { id: '1', title: 'Make coffee', done: false },
+    { id: '2', title: 'Make soup', done: false },
+    { id: '3', title: 'Make dinner tomorrow', done: false },
+    { id: '4', title: 'Read book', done: true },
+    { id: '5', title: 'Study mobx', done: false },
   ];
+
+  counter = this.todos.length;
 
   constructor() {
     makeAutoObservable(this);
@@ -17,6 +19,7 @@ class Store {
 
   addTodo(todo: TodoType) {
     this.todos.push(todo);
+    this.counter += 1;
   }
 
   deleteTodo(delId: string) {
