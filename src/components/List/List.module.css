@@ -1,0 +1,8 @@
+.listItem {
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+
+.listItem:last-child {
+  margin-bottom: 0;
+}
