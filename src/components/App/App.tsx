@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Input from '../Input';
+import Header from '../Header';
 import List from '../List';
 
 import classes from './App.module.css';
@@ -8,10 +8,7 @@ import classes from './App.module.css';
 function App() {
   return (
     <div className={classes.App}>
-      <div className={classes.header}>
-        <h1>To Do List</h1>
-        <Input />
-      </div>
+      <Header />
       <span className={classes.line} />
       <List />
     </div>

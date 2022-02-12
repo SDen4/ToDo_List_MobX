@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.red {
+  color: brown;
+}
+
+.green {
+  color: darkgreen;
+}
