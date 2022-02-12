@@ -1,10 +1,16 @@
 import React from 'react';
 
+import store from '../../store/store';
+
 import { ItemType } from './types';
 
 import classes from './Item.module.css';
 
 const Item: React.FC<ItemType> = ({ todoObj }) => {
+  const deleteTodo = (id: string) => {
+    store.deleteTodo(id);
+  };
+
   return (
     <div className={classes.li}>
       <div className={classes.itemTitle}>
@@ -13,7 +19,9 @@ const Item: React.FC<ItemType> = ({ todoObj }) => {
         <div>{todoObj.title}</div>
       </div>
 
-      <button type="button">Del</button>
+      <button type="button" onClick={() => deleteTodo(todoObj.id)}>
+        Del
+      </button>
     </div>
   );
 };

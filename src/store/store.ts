@@ -18,6 +18,10 @@ class Store {
   addTodo(todo: TodoType) {
     this.todos.push(todo);
   }
+
+  deleteTodo(delId: string) {
+    this.todos = this.todos.filter((el) => el.id !== delId);
+  }
 }
 
 export default new Store();

@@ -8,7 +8,7 @@ import Item from '../Item';
 import classes from './List.module.css';
 
 const List = observer(() => {
-  return (
+  return store.todos.length ? (
     <ul>
       {store.todos.map((el) => {
         return (
@@ -18,6 +18,8 @@ const List = observer(() => {
         );
       })}
     </ul>
+  ) : (
+    <span>No todos yet...</span>
   );
 });
 
