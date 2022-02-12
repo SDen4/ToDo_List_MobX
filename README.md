@@ -6,7 +6,7 @@
 
 ---
 
-### Watch on [github-pages](https://sden4.github.io/todo_list_mobx/)
+### Watch on [github-pages](https://sden4.github.io/ToDo_List_MobX/)
 
 ---
 
