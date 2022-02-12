@@ -30,3 +30,8 @@
 .itemTitle {
   display: flex;
 }
+
+.checked {
+  color: lightgray;
+  text-decoration: line-through;
+}

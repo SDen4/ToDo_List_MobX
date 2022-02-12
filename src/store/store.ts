@@ -25,6 +25,16 @@ class Store {
   deleteTodo(delId: string) {
     this.todos = this.todos.filter((el) => el.id !== delId);
   }
+
+  checkTodo(checkId: string) {
+    this.todos = this.todos.map((el) => {
+      if (el.id === checkId) {
+        return { ...el, done: !el.done };
+      } else {
+        return el;
+      }
+    });
+  }
 }
 
 export default new Store();

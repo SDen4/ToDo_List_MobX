@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import store from '../../store/store';
 
@@ -11,12 +12,24 @@ const Item: React.FC<ItemType> = ({ todoObj }) => {
     store.deleteTodo(id);
   };
 
+  const checkTodo = (id: string) => {
+    store.checkTodo(id);
+  };
+
   return (
     <div className={classes.li}>
       <div className={classes.itemTitle}>
-        <input type="checkbox" checked={todoObj.done} />
-        <span>#{todoObj.id}</span>
-        <div>{todoObj.title}</div>
+        <input
+          type="checkbox"
+          checked={todoObj.done}
+          onChange={() => checkTodo(todoObj.id)}
+        />
+        <span className={clsx(todoObj.done && classes.checked)}>
+          #{todoObj.id}
+        </span>
+        <div className={clsx(todoObj.done && classes.checked)}>
+          {todoObj.title}
+        </div>
       </div>
 
       <button type="button" onClick={() => deleteTodo(todoObj.id)}>

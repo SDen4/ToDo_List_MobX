@@ -19,7 +19,7 @@ const List = observer(() => {
       })}
     </ul>
   ) : (
-    <span>No todos yet...</span>
+    <div className={classes.noItems}>No todos yet...</div>
   );
 });
 
