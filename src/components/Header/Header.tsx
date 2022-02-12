@@ -8,18 +8,24 @@ import Input from '../Input';
 import classes from './Header.module.css';
 
 const Header = observer(() => {
+  const greenNum = store.todos.filter((el) => el.done).length;
+  const redNum = store.todos.length;
+
   return (
     <div className={classes.header}>
       <h1>
         To Do List{' '}
-        {Boolean(store.todos.length) && (
+        {Boolean(redNum) && (
           <>
             (
-            <span className={classes.green}>
-              {store.todos.filter((el) => el.done).length}
-            </span>
-            <span> / </span>
-            <span className={classes.red}>{store.todos.length}</span>)
+            {Boolean(greenNum) && (
+              <span className={classes.green}>{greenNum}</span>
+            )}
+            {Boolean(greenNum > 0 && greenNum !== redNum) && <span> / </span>}
+            {Boolean(greenNum < redNum) && (
+              <span className={classes.red}>{redNum}</span>
+            )}
+            )
           </>
         )}
       </h1>
