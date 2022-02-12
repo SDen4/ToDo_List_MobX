@@ -1,8 +1,8 @@
 {
   "name": "todo_list_mobx",
   "version": "0.1.0",
-  "homepage": "https://sden4.github.io/todo_list_mobx",
-  "private": true,
+  "homepage": "https://sden4.github.io/ToDo_List_MobX",
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
