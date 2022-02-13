@@ -6,6 +6,8 @@ class Store {
   todos: TodoType[] = [];
 
   counter: number = this.todos.length;
+  modalFlag: boolean = false;
+  delTodo: TodoType = { id: '', title: '', done: false };
 
   constructor() {
     makeAutoObservable(this);
@@ -42,6 +44,15 @@ class Store {
 
   counterUpdate(num: number) {
     this.counter = num;
+  }
+
+  deleteTodoFunc(flag: boolean, delTodo: TodoType) {
+    this.modalFlag = flag;
+    this.delTodo = delTodo;
+  }
+
+  setModalFlag(flag: boolean) {
+    this.modalFlag = flag;
   }
 }
 

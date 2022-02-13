@@ -6,10 +6,11 @@ import store from '../../store/store';
 import { ItemType } from './types';
 
 import classes from './Item.module.css';
+import { TodoType } from '../../store/types';
 
 const Item: React.FC<ItemType> = ({ todoObj }) => {
-  const deleteTodo = (id: string) => {
-    store.deleteTodo(id);
+  const deleteTodo = (todoObj: TodoType) => {
+    store.deleteTodoFunc(true, todoObj);
   };
 
   const checkTodo = (id: string) => {
@@ -32,7 +33,7 @@ const Item: React.FC<ItemType> = ({ todoObj }) => {
         </div>
       </div>
 
-      <button type="button" onClick={() => deleteTodo(todoObj.id)}>
+      <button type="button" onClick={() => deleteTodo(todoObj)}>
         Del
       </button>
     </div>
