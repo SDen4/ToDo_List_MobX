@@ -18,3 +18,7 @@
 - CSS
 
 ---
+
+### Data
+
+The data is stored in browser local storage.
