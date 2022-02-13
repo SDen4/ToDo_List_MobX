@@ -16,7 +16,7 @@ function App() {
 
     if (localTodos?.length) {
       store.initTodos(localTodos);
-      store.counterUpdate(Number(localTodos[localTodos.length - 1].id));
+      store.counterUpdate(Number(localTodos.at(-1)?.id));
     }
   }, []);
 
