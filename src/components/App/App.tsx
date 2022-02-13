@@ -9,7 +9,6 @@ import List from '../List';
 import Modal from '../Modal';
 
 import classes from './App.module.css';
-import clsx from 'clsx';
 
 const App = observer(() => {
   useEffect(() => {
